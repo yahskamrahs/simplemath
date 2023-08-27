@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Unit Converter</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.png" rel="icon">
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+
+
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+         background: url(../assets/img/hero-bg1.jpg) top center;
+         color: #fff;
+         text-align: center;
+         margin: 0;
+         padding: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 125vh;
+        }
+
+        .converter {
+         background-color: #343a40;
+         padding: 20px;
+         border-radius: 10px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         width: 340px;
+         margin-top: 20px;
+        }
+        h1, h2 {
+        color: #3498db;
+             } 
+
+        .input-container, .output-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .input-label, .output-label {
+            text-align: left;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .input-field, .output-value {
+            padding: 10px;
+            border: none;
+            background-color: #444;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        select {
+            padding: 10px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .developer{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #888;
+  }
+  .emoji-image {
+    width: 13px; /* Adjust this value to your preferred width */
+    height: 13px; /* Maintain the aspect ratio */
+    vertical-align: middle;
+  }
+    </style>
+</head>
+<body>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div id="logo">
+        <h1><b href="">SIMPLE</b>MATH</h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="../index.html">back to Home</a></li>
+          <li><a class="nav-link scrollto" href="https://yahskamrahs.github.io/personal/">About Me</a></li>
+         <!-- <li><a class="nav-link scrollto " href="#portfolio">Tools</a></li>
+          <li><a class="nav-link scrollto" href="#team">Contact</a></li>-->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+
+
+    <div class="converter">
+        <h1>Length Unit Converter</h1>
+        <div class="input-container">
+            <label class="input-label" for="fromUnit">From:</label>
+            <select id="fromUnit">
+               <option value="kilometer">Kilometer (km)</option>
+               <option value="meter">Meter (m)</option>
+               <option value="decimeter">Decimeter (dm)</option>
+               <option value="centimeter">Centimeter (cm)</option>
+               <option value="milimeter">Milimeter (mm)</option>
+               <option value="nanometer">Nanometer (nm)</option>
+               <option value="micrometer">Micrometer (µm)</option>
+               <option value="picometer">Picometer (pm)</option>
+               <option value="lightyear">Light Year (ly)</option>
+               <option value="lunardistance">Lunar Distance (LD)</option>
+               <option value="inch">Inch (in)</option>
+               <option value="mile">Mile (mi)</option>
+               <option value="foot">Foot (ft)</option>
+               <option value="yard">Yard (yd)</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label class="input-label" for="inputLength"></label>
+            <input class="input-field" type="number" id="inputLength" placeholder="Enter length">
+        </div>
+        
+        <div class="input-container">
+            <label class="input-label" for="toUnit">To:</label>
+            <select id="toUnit">
+               <option value="kilometer">Kilometer (km)</option>
+                <option value="meter">Meter (m)</option>
+                <option value="decimeter">Decimeter (dm)</option>
+                <option value="centimeter">Centimeter (cm)</option>
+                <option value="milimeter">Milimeter (mm)</option>
+                <option value="nanometer">Nanometer (nm)</option>
+                <option value="micrometer">Micrometer (µm)</option>
+                <option value="picometer">Picometer (pm)</option>
+                <option value="lightyear">Light Year (ly)</option>
+                <option value="lunardistance">Lunar Distance (LD)</option>
+                <option value="inch">Inch (in)</option>
+                <option value="mile">Mile (mi)</option>
+                <option value="foot">Foot (ft)</option>
+                <option value="yard">Yard (yd)</option>
+            </select>
+        </div>
+
+        <div class="output-container">
+            <label class="output-label"></label>
+            <input class="output-value" id="outputLength" readonly>
+        </div>
+        
+        <div class="developer">Designed By Akshay Sharma</div>
+        <div class="developer">With Peace <img src="white_bird.png" class="emoji-image">
+    </div>
+
+
+
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+      <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+    
+      <!-- Template Main JS File -->
+      <script src="../assets/js/main.js"></script>
+      <script>
+         function openPage(pageName) {
+                 window.location.href = pageName;
+               }
+      </script>
+
+
+
+
+    <script>
+        const inputLength = document.getElementById("inputLength");
+        const fromUnit = document.getElementById("fromUnit");
+        const toUnit = document.getElementById("toUnit");
+        const outputLength = document.getElementById("outputLength");
+
+        // Conversion factors
+        const conversionFactors = {
+         kilometer: { kilometer: 1, meter: 1000, decimeter: 10000, centimeter: 100000, milimeter: 1000000, nanometer: 1e+12, micrometer: 1e+9, picometer: 1e+15, lightyear: 1.057e-13, lunardistance: 3.844e+8, inch: 39370.1, mile: 0.621371, foot: 3280.84, yard: 1093.61 },
+            meter: { kilometer: 0.001, meter: 1, decimeter: 10, centimeter: 100, milimeter: 1000, nanometer: 1e+9, micrometer: 1e+6, picometer: 1e+12, lightyear: 1.057e-16, lunardistance: 3.844e+5, inch: 39.3701, mile: 0.000621371, foot: 3.28084, yard: 1.09361 },
+            decimeter: { kilometer: 0.0001, meter: 0.1, decimeter: 1, centimeter: 10, milimeter: 100, nanometer: 1e+8, micrometer: 1e+5, picometer: 1e+11, lightyear: 1.057e-17, lunardistance: 3.844e+4, inch: 3.93701, mile: 6.2137e-5, foot: 0.328084, yard: 0.109361 },
+            centimeter: { kilometer: 1e-5, meter: 0.01, decimeter: 0.1, centimeter: 1, milimeter: 10, nanometer: 1e+7, micrometer: 1e+4, picometer: 1e+10, lightyear: 1.057e-18, lunardistance: 3.844e+3, inch: 0.393701, mile: 6.2137e-6, foot: 0.0328084, yard: 0.0109361 },
+            milimeter: { kilometer: 1e-6, meter: 0.001, decimeter: 0.01, centimeter: 0.1, milimeter: 1, nanometer: 1e+6, micrometer: 1000, picometer: 1e+9, lightyear: 1.057e-19, lunardistance: 3.844e+2, inch: 0.0393701, mile: 6.2137e-7, foot: 0.00328084, yard: 0.00109361 },
+            nanometer: { kilometer: 1e-12, meter: 1e-9, decimeter: 1e-8, centimeter: 1e-7, milimeter: 1e-6, nanometer: 1, micrometer: 0.001, picometer: 1000, lightyear: 1.057e-25, lunardistance: 3.844e-10, inch: 3.937e-8, mile: 6.2137e-13, foot: 3.2808e-9, yard: 1.0936e-9 },
+            micrometer: { kilometer: 1e-9, meter: 1e-6, decimeter: 1e-5, centimeter: 1e-4, milimeter: 0.001, nanometer: 1000, micrometer: 1, picometer: 1e+6, lightyear: 1.057e-22, lunardistance: 3.844e-7, inch: 3.937e-5, mile: 6.2137e-10, foot: 3.2808e-6, yard: 1.0936e-6 },
+            picometer: { kilometer: 1e-15, meter: 1e-12, decimeter: 1e-11, centimeter: 1e-10, milimeter: 1e-9, nanometer: 0.001, micrometer: 1e-6, picometer: 1, lightyear: 1.057e-28, lunardistance: 3.844e-13, inch: 3.937e-11, mile: 6.2137e-16, foot: 3.2808e-12, yard: 1.0936e-12 },
+            lightyear: { kilometer: 9.461e+12, meter: 9.461e+15, decimeter: 9.461e+16, centimeter: 9.461e+17, milimeter: 9.461e+18, nanometer: 9.461e+24, micrometer: 9.461e+21, picometer: 9.461e+27, lightyear: 1, lunardistance: 2.573e+20, inch: 3.725e+17, mile: 5.879e+12, foot: 3.104e+16, yard: 1.035e+16 },
+            lunardistance: { kilometer: 0.00000258, meter: 258000, decimeter: 2580000, centimeter: 25800000, milimeter: 2.58e+8, nanometer: 2.58e+14, micrometer: 2.58e+11, picometer: 2.58e+17, lightyear: 3.86e-14, lunardistance: 1, inch: 10157480, mile: 0.00160375, foot: 84480000, yard: 28160000 },
+            inch: { kilometer: 2.54e-5, meter: 0.0254, decimeter: 2.54, centimeter: 25.4, milimeter: 254, nanometer: 2.54e+7, micrometer: 25400, picometer: 2.54e+10, lightyear: 2.6848e-17, lunardistance: 2.54e-8, inch: 1, mile: 1.5783e-5, foot: 0.0833333, yard: 0.0277778 },
+            mile: { kilometer: 1.60934, meter: 1609.34, decimeter: 16093.4, centimeter: 160934, milimeter: 1.60934e+6, nanometer: 1.60934e+12, micrometer: 1.60934e+9, picometer: 1.60934e+15, lightyear: 1.7011e-13, lunardistance: 5.2155e+5, inch: 63360, mile: 1, foot: 5280, yard: 1760 },
+            foot: { kilometer: 0.0003048, meter: 0.3048, decimeter: 3.048, centimeter: 30.48, milimeter: 304.8, nanometer: 3.048e+7, micrometer: 3.048e+4, picometer: 3.048e+10, lightyear: 3.2217e-16, lunardistance: 1.0567e+5, inch: 12, mile: 0.000189394, foot: 1, yard: 0.333333 },
+            yard: { kilometer: 0.0009144, meter: 0.9144, decimeter: 9.144, centimeter: 91.44, milimeter: 914.4, nanometer: 9.144e+6, micrometer: 9.144e+3, picometer: 9.144e+9, lightyear: 9.665e-16, lunardistance: 3.1702e+5, inch: 36, mile: 0.000568182, foot: 3, yard: 1 },
+        }; 
+
+        function convert() {
+            const inputValue = parseFloat(inputLength.value);
+            const from = fromUnit.value;
+            const to = toUnit.value;
+
+            if (!isNaN(inputValue)) {
+                const result = inputValue * conversionFactors[from][to];
+                outputLength.value = `${result.toFixed(2)} ${to}`;
+            } else {
+                outputLength.value = "Output Will show here";
+            }
+        }
+
+        inputLength.addEventListener("input", convert);
+        fromUnit.addEventListener("change", convert);
+        toUnit.addEventListener("change", convert);
+
+        // Initial conversion
+        convert();
+    </script>
+</body>
+</html>

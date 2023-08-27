@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Basic calculator</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+<style>
+  #back {
+    background: url(../assets/img/hero-bg1.jpg) top center;
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 105vh;
+    margin: 0;
+  }
+
+  .calculator {
+    background-color: #111;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 340px;
+  }
+
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .button {
+      background-color: #1c1c1c;
+      color: #fff;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.2s;
+      outline: none;
+    }
+
+  .button.operator {
+    background-color: #fc8b1a;
+  }
+
+  .button:active {
+    transform: scale(0.95);
+  }
+
+  .display {
+      background-color: #1c1c1c;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+  #display {
+   width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      text-align: right;
+  }
+
+  .developer{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #888;
+  }
+  .hisbutton{
+      background-color: #303030;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      
+      transition: background-color 0.2s;
+      outline: none;
+     }
+    
+   .emoji-image {
+    width: 13px; /* Adjust this value to your preferred width */
+    height: 13px; /* Maintain the aspect ratio */
+    vertical-align: middle;
+  }
+
+
+
+
+</style>
+</head>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div id="logo">
+        <h1><b href="">SIMPLE</b>MATH</h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="../index.html">back to Home</a></li>
+          <li><a class="nav-link scrollto" href="https://yahskamrahs.github.io/personal/">About Me</a></li>
+         <!-- <li><a class="nav-link scrollto " href="#portfolio">Tools</a></li>
+          <li><a class="nav-link scrollto" href="#team">Contact</a></li>-->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+
+
+
+
+
+  <!-- ======= Hero Section ======= -->
+  
+  <section id="back">
+  
+     <div class="calculator">
+      <div class="display">
+          <input type="text" id="display" readonly>
+        </div>
+      <div class="button-grid">
+    
+        <button class="button operator" onclick="clearDisplay()">C</button>
+        <button class="hisbutton" onclick="viewHistory()">View History</button>
+        <button class="hisbutton" onclick="backspace()">&#9003;</button>
+        <button class="button operator" onclick="appendValue('/')">/</button>
+        
+        <button class="button" onclick="appendValue('7')">7</button>
+        <button class="button" onclick="appendValue('8')">8</button>
+        <button class="button" onclick="appendValue('9')">9</button>
+        <button class="button operator" onclick="appendValue('+')">+</button>
+    
+        
+        <button class="button" onclick="appendValue('4')">4</button>
+        <button class="button" onclick="appendValue('5')">5</button>
+        <button class="button" onclick="appendValue('6')">6</button>
+        <button class="button operator" onclick="appendValue('-')">-</button>
+    
+        
+        
+        <button class="button" onclick="appendValue('1')">1</button>
+        <button class="button" onclick="appendValue('2')">2</button>
+        <button class="button" onclick="appendValue('3')">3</button>
+        <button class="button operator" onclick="appendValue('*')">*</button>
+        
+    
+        
+        <button class="button" onclick="appendValue('00')">00</button> 
+        <button class="button" onclick="appendValue('0')">0</button>
+        <button class="button" onclick="appendValue('.')">.</button>
+        <button class="button operator" onclick="calculate()">=</button>
+    
+    
+      </div>
+      <div class="developer">Designed By Akshay Sharma</div>
+      <div class="developer">With Peace <img src="white_bird.png" class="emoji-image"> 
+    </div>
+  </div>
+  </section><!-- End Hero Section -->
+
+
+
+
+
+
+
+  <main id="main">
+
+ 
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ======= Team Section ======= 
+    <section id="team">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">Contact Me</h3>
+          <p class="section-description">Follow me on github for source code of this project</p>
+        </div>
+        <div class="row">
+            
+          <div class="button-table1">
+            <button class="square-button" onclick="openPage('https://github.com/yahskamrahs')">
+                  <img src="image/contact/github.png" alt="Logo 1"><br>
+                  
+            </button>
+
+            <button class="square-button"  onclick="window.open('mailto:example@example.com');">
+                <img src="image/contact/gmail.png" alt="Logo 2"><br>
+               
+            </button>
+          
+            <button class="square-button"  onclick="window.open('https://www.linkedin.com/in/akshay-sharma-b803a6264');">
+                <img src="image/contact/linkedin.png" alt="Logo 2"><br>
+                
+            </button>
+            
+           <button class="square-button"  onclick="window.open('https://instagram.com/yahska_amrahs?igshid=MzRlODBiNWFlZA==');">
+                <img src="image/contact/instagram.png" alt="Logo 2"><br>
+               
+           </button>
+        
+           <button class="square-button" onclick="window.open('https://twitter.com/yahskaamrahs?t=8CjfeyyMGt2OyNBMMp4yLg&s=09');" >
+                <img src="image/contact/twitter.png" alt="Logo 2"><br>
+                
+           </button>
+
+          </div>
+       </div>
+     </div>
+    </section> End Team Section -->
+
+
+
+
+
+
+
+   
+
+
+
+
+
+  </main><!-- End #main -->
+
+
+
+
+  <!-- ======= Footer ======= 
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+
+      </div>
+    </div>
+
+    <div class="container">
+    
+      <div class="credits">
+        Developed by <a href="https://yahskamrahs.github.io/simple">Akshay Sharma</a> With Peace <img src="white_bird.png" class="emoji-image">
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong>2023</strong>
+      </div>
+    </div>
+  </footer> End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script>
+
+
+    let calculationHistory = [];
+
+function appendValue(value) {
+         document.getElementById("display").value += value;
+     }
+
+
+function backspace() {
+   display.value = display.value.slice(0, -1);
+ }
+
+function clearDisplay() {
+         document.getElementById("display").value = "";
+     }
+
+function calculate() {
+         let expression = document.getElementById("display").value;
+       try{
+         let result = eval(expression);
+         document.getElementById("display").value = result;
+         calculationHistory.push(expression + " = " + result);
+         } catch (error) {
+           display.value = 'Expression Error';
+          }
+         }
+  function viewHistory() {
+         localStorage.setItem("calculationHistory", JSON.stringify(calculationHistory));
+         window.location.href = "history/history1.html";
+     } 
+
+    document.addEventListener('keydown', (event) => {
+ const key = event.key;
+ if (/^[0-9]$/.test(key)) {
+   appendValue(key);
+ } else if (key === '.') {
+   appendValue('.');
+ } else if (key === 'Backspace') {
+   backspace();
+ }  else if (key === '/') {
+   appendValue('/');
+ }  else if (key === '*') {
+   appendValue('*');
+ } else if (key === '-') {
+   appendValue('-');
+ }  else if (key === '+') {
+   appendValue('+');
+ }  else if (key === 'c') {
+   clearDisplay();
+ }   else if (key === 'C') {
+   clearDisplay();
+ }   else if (key === 'Enter') {
+   calculate();
+ }
+});
+
+
+</script>
+
+
+
+
+
+  
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+     function openPage(pageName) {
+             window.location.href = pageName;
+           }
+  </script>
+
+</body>
+
+</html>

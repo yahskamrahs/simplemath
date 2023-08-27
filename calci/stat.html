@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statistic Calculator</title>
+<meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+<style>
+  body {
+    background: url(../assets/img/hero-bg1.jpg) top center;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+  #calculator {
+    background-color: #343a40;
+    width: 340px;
+    margin: 70px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    
+  }
+  h1 {
+    text-align: center;
+    color: #3498db;
+  }
+  p {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: #ffffff;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0074d9;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+  #output {
+    margin-top: 20px;
+    text-align: left;
+    justify-content: left;
+  }
+  .developer{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+  }
+
+   .emoji-image {
+    width: 13px; /* Adjust this value to your preferred width */
+    height: 13px; /* Maintain the aspect ratio */
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+ <!-- ======= Header ======= -->
+ <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <div id="logo">
+      <h1><b href="">SIMPLE</b>MATH</h1>
+    </div>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto active" href="../index.html">back to Home</a></li>
+        <li><a class="nav-link scrollto" href="https://yahskamrahs.github.io/personal/">About Me</a></li>
+       <!-- <li><a class="nav-link scrollto " href="#portfolio">Tools</a></li>
+        <li><a class="nav-link scrollto" href="#team">Contact</a></li>-->
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+  </div>
+</header><!-- End Header -->
+
+
+
+
+
+
+<div id="calculator">
+  <h1>Statistic Calculator</h1>
+  <p>Enter The Data For individual series:</p>
+  <textarea id="dataInput" placeholder="Enter numbers separated by commas,"></textarea>
+  <button id="calculateButton">Calculate</button>
+  <div id="output">
+    <!-- Output elements will be updated dynamically -->
+  </div>
+  <div class="developer">Designed By Akshay Sharma</div>
+  <div class="developer">With Peace <img src="white_bird.png" class="emoji-image">
+</div>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Vendor JS Files -->
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+     function openPage(pageName) {
+             window.location.href = pageName;
+           }
+
+  </script>
+
+
+
+
+
+
+
+<script>
+  const updateStatistics = (data) => {
+    const dataArray = data.split(",").map(Number);
+    
+    const totalCount = dataArray.length;
+    const sum = dataArray.reduce((acc, value) => acc + value, 0);
+    const mean = sum / totalCount;
+    
+    let median, mode, modeCount, largest, smallest, range;
+    
+    const sortedData = [...dataArray].sort((a, b) => a - b);
+    
+    if (totalCount % 2 === 0) {
+      const mid1 = sortedData[totalCount / 2 - 1];
+      const mid2 = sortedData[totalCount / 2];
+      median = (mid1 + mid2) / 2;
+    } else {
+      median = sortedData[Math.floor(totalCount / 2)];
+    }
+    
+    const occurrences = {};
+    sortedData.forEach(value => {
+      occurrences[value] = (occurrences[value] || 0) + 1;
+    });
+    
+    mode = parseInt(Object.keys(occurrences).reduce((a, b) => occurrences[a] > occurrences[b] ? a : b));
+    modeCount = occurrences[mode];
+    largest = sortedData[totalCount - 1];
+    smallest = sortedData[0];
+    range = largest - smallest;
+    
+    const geometricMean = Math.pow(dataArray.reduce((acc, value) => acc * value, 1), 1 / totalCount);
+    
+    const variance = dataArray.reduce((acc, value) => acc + Math.pow(value - mean, 2), 0) / totalCount;
+    const stdDeviation = Math.sqrt(variance);
+    
+    const sampleVariance = dataArray.reduce((acc, value) => acc + Math.pow(value - mean, 2), 0) / (totalCount - 1);
+    const sampleStdDeviation = Math.sqrt(sampleVariance);
+    
+    document.getElementById("output").innerHTML = `
+      <p>Count: ${totalCount}</p>
+      <p>Sum: ${sum}</p>
+      <p>Mean: ${mean.toFixed(2)}</p>
+      <p>Median: ${median.toFixed(2)}</p>
+      <p>Mode: ${mode} (appeared ${modeCount} times)</p>
+      <p>Largest: ${largest}</p>
+      <p>Smallest: ${smallest}</p>
+      <p>Range: ${range}</p>
+      <p>Geometric Mean: ${geometricMean.toFixed(2)}</p>
+      <p>Standard Deviation: ${stdDeviation.toFixed(2)}</p>
+      <p>Variance: ${variance.toFixed(2)}</p>
+      <p>Sample Standard Deviation: ${sampleStdDeviation.toFixed(2)}</p>
+      <p>Sample Variance: ${sampleVariance.toFixed(2)}</p>
+      <p>Sorted data: ${sortedData.join(', ')}</p>
+    `;
+  };
+
+  const calculateButton = document.getElementById("calculateButton");
+  calculateButton.addEventListener("click", () => {
+    const dataInput = document.getElementById("dataInput").value;
+    updateStatistics(dataInput);
+  });
+</script>
+</body>
+</html>

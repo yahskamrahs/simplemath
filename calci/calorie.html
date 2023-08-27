@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calorie Calculator</title>
+<meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+
+
+
+   <!--   ###################  STYLE SECTION   ############################# -->
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: url(../assets/img/hero-bg1.jpg) top center;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+  }
+  .calculator {
+    background-color: #343a40;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 340px;
+    margin-top: 50px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    text-align: left;
+  }
+  input, select {
+    padding: 10px;
+    margin: 5px 0;
+    width: 93%;
+    background-color: #464d53;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  h1, h2 {
+    color: #3498db;
+  }
+   .developer{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #888;
+  }
+
+   .emoji-image {
+    width: 13px; /* Adjust this value to your preferred width */
+    height: 13px; /* Maintain the aspect ratio */
+    vertical-align: middle;
+  }
+
+
+
+</style>
+
+</head>
+
+
+<!--   ###################  BODY SECTION   ############################# -->
+
+<body>
+ 
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div id="logo">
+        <h1><b href="">SIMPLE</b>MATH</h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="../index.html">back to Home</a></li>
+          <li><a class="nav-link scrollto" href="https://yahskamrahs.github.io/personal/">About Me</a></li>
+         <!-- <li><a class="nav-link scrollto " href="#portfolio">Tools</a></li>
+          <li><a class="nav-link scrollto" href="#team">Contact</a></li>-->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+ 
+ 
+ 
+ 
+ 
+ 
+  <div class="calculator">
+    <h1>Calorie Calculator</h1>
+    <form id="calorieForm">
+      <label>Weight (kg):</label>
+      <input type="number" id="weight" step="0.01" required>
+      <label>Height (cm):</label>
+      <input type="number" id="height" step="0.01" required>
+      <label>Age:</label>
+      <input type="number" id="age" required>
+      <label>Gender:</label>
+      <select id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <label>Activity Level:</label>
+      <select id="activityLevel">
+        <option value="sedentary">Sedentary (little or no exercise)</option>
+        <option value="lightlyActive">Lightly active (light exercise/sports 1-3 days/week)</option>
+        <option value="moderatelyActive">Moderately active (moderate exercise/sports 3-5 days/week)</option>
+        <option value="veryActive">Very active (hard exercise/sports 6-7 days a week)</option>
+        <option value="superActive">Super active (very hard exercise/sports, physical job, or training)</option>
+      </select>
+      <label>Goal:</label>
+      <select id="goal">
+        <option value="maintain">Maintain Weight</option>
+        <option value="lose">Lose Weight</option>
+        <option value="gain">Gain Weight</option>
+      </select>
+      <button type="button" id="calculateButton">Calculate</button>
+    </form>
+    <h2>Results:</h2>
+    <p id="calorieResult"></p>
+    <div class="developer">Designed By Akshay Sharma</div>
+    <div class="developer">With Peace <img src="white_bird.png" class="emoji-image">
+    
+  </div>
+
+
+<!--   ###################  SCRIPT SECTION   ############################# -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Vendor JS Files -->
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+     function openPage(pageName) {
+             window.location.href = pageName;
+           }
+
+  </script>
+
+
+
+
+
+  <script>
+    document.getElementById("calculateButton").addEventListener("click", function() {
+      calculateCalories();
+    });
+
+    function calculateCalories() {
+      const weight = parseFloat(document.getElementById("weight").value);
+      const height = parseFloat(document.getElementById("height").value);
+      const age = parseInt(document.getElementById("age").value);
+      const gender = document.getElementById("gender").value;
+      const activityLevel = document.getElementById("activityLevel").value;
+      const goal = document.getElementById("goal").value;
+
+      let calorieResult = 0;
+
+      if (gender === "male") {
+        calorieResult = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+      } else if (gender === "female") {
+        calorieResult = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+      }
+
+      // Apply activity level multiplier
+      let activityMultiplier = 1.2; // Sedentary (little or no exercise)
+      if (activityLevel === "lightlyActive") {
+        activityMultiplier = 1.375;
+      } else if (activityLevel === "moderatelyActive") {
+        activityMultiplier = 1.55;
+      } else if (activityLevel === "veryActive") {
+        activityMultiplier = 1.725;
+      } else if (activityLevel === "superActive") {
+        activityMultiplier = 1.9;
+      }
+
+      calorieResult *= activityMultiplier;
+
+      // Adjust calories based on goal
+      if (goal === "lose") {
+        calorieResult *= 0.85; // Reduce by 15% for weight loss
+      } else if (goal === "gain") {
+        calorieResult *= 1.15; // Increase by 15% for weight gain
+      }
+
+      document.getElementById("calorieResult").innerHTML = `Estimated Calories: ${calorieResult.toFixed(2)} calories per day`;
+    }
+  </script>
+</body>
+</html>
+

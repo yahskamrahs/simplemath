@@ -1,0 +1,75 @@
+<!-- history.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculation History</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+      
+         .calculator {
+      background-color: #111;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      width: 310px;
+    }
+    
+        .history {
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 15px;
+            color: #eee8aa;
+            text-align: center;
+            font-size: 20px;
+        }
+        ul {
+           
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            margin-bottom: 8px;
+            text-align: left;
+            border-bottom: 1px solid #deb887;;
+            padding-bottom: 4px;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+ <div class="calculator">
+    <div class="history">
+        <h1>CALCULATION HISTORY</h1>
+        <ul>
+            <script>
+                const calculationHistory = JSON.parse(localStorage.getItem("calculationHistory")) || [];
+                calculationHistory.slice(-25).forEach(item => {
+                    const li = document.createElement("li");
+                    li.textContent = item;
+                    document.querySelector("ul").appendChild(li);
+                });
+            </script>
+        </ul>
+        <br>
+        <a href="../basic.html">Back to Calculator</a>
+    </div>
+  </div>
+</body>
+</html>

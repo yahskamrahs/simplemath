@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Simple Math v1.2</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+<style>
+.hello {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+
+  .button-table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+  }
+
+  .button-table1{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center; /* Align items horizontally at the center */
+    align-items: center; /* Align items vertically at the center */
+    height: 20px; /* Set a fixed height for the container */
+    gap: 0px; /* Adjust the gap between items */
+    margin-top: 0px;
+    margin-bottom: 50px;
+   
+  }
+  .button-table3{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center; /* Align items horizontally at the center */
+    align-items: center; /* Align items vertically at the center */
+     /* Set a fixed height for the container */
+   /* Adjust the gap between items */
+   
+   
+  }
+
+  .square-button3 {
+   
+    border: none;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .square-button3 img {
+    max-width: 250px;
+    max-height: 250px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  .text3 {
+    font-weight: bold;
+    text-transform: none;
+    size: 80px;
+    color: #fff;
+    text-align: end;
+
+}
+
+
+  .square-button {
+    width: auto;
+    height: auto;
+    border: none;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .square-button:hover {
+  transform: scale(1.1); /* Zoom in by 10% on hover */
+}
+
+  .square-button img {
+    max-width: 50px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+.text {
+    font-weight: bold;
+    text-transform: none;
+    color: #fff;
+
+}
+
+.emoji-image {
+    width: 13px; /* Adjust this value to your preferred width */
+    height: 13px; /* Maintain the aspect ratio */
+    vertical-align: middle;
+  }
+
+
+
+</style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div id="logo">
+        <!--  <a href="#"><em>Simple</em> Math</a> -->
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h1><b href="">SIMPLE</b>MATH</h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="https://yahskamrahs.github.io/personal/">About Me</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Tools</a></li>
+          <li><a class="nav-link scrollto" href="#team">Contact</a></li>
+
+         <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+
+         
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="10">
+      <h2>Unlock the Power of Numbers</h2>
+      <h1><b href=>YOUR</b> MATH TOOLBOX</h1>
+      <a href="#portfolio" class="btn-get-started">Discover Tools</a>
+    </div>
+  </section><!-- End Hero Section -->
+
+
+
+
+
+
+
+  <main id="main">
+
+ 
+
+
+
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2 class="section-title">Followings Are Our list of Tools</h2>
+          <p class="section-description">You can Switch Between the Tools by Clicking on Following Buttons </p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="10">
+          
+            <div id="portfolio-flters">
+              <a href='#tabs-1'>calculator tools</a>
+              <a href='#tabs-2'>unit convertors</a>
+              <a href='#tabs-3'>other tools</a>
+              
+            </div>>
+          </div>
+        </div>
+
+        <section class="hello">
+
+
+
+          <article id='tabs-1'>
+            <div class="row">
+              
+             <div class="hello">
+               <div class="button-table">
+                    <button class="square-button" onclick="openPage('calci/basic.html')">
+                          <img src="image/calculator/basic.png" alt="Logo 1"><br>
+                          <p class="text">Basic</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('calci/scientific.html')">
+                        <img src="image/calculator/scientific.png" alt="Logo 2"><br>
+                        <p class="text">Scientific</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('calci/bmi.html')">
+                         <img src="image/calculator/bmi.png" alt="Logo 3"><br>
+                         <p class="text">BMI</p>
+                   </button>
+
+                    <button class="square-button" onclick="openPage('calci/calorie.html')">
+                          <img src="image/calculator/calories.png" alt="Logo 4"><br>
+                          <p class="text">Calorie</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('calci/mortgage.html')">
+                           <img src="image/calculator/mortgage.png" alt="Logo 5"><br>
+                           <p class="text">Mortgage</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('calci/finance.html')">
+                             <img src="image/calculator/financial.png" alt="Logo 6"><br>
+                              <p class="text">Financial</p>
+                   </button>
+                    <button class="square-button" onclick="openPage('calci/date.html')">
+                          <img src="image/calculator/calendar.png" alt="Logo 4"><br>
+                          <p class="text">Date</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('calci/stat.html')">
+                           <img src="image/calculator/pie-chart.png" alt="Logo 5"><br>
+                           <p class="text">Statistical</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('calci/matrix.html')">
+                             <img src="image/calculator/matrix.png" alt="Logo 6"><br>
+                             <p class="text">Matrix</p>
+                   </button>
+
+
+                  </div>
+                </div>               
+            </div>
+          </article>
+
+
+
+          <article id='tabs-2'>
+            <div class="row">
+              
+             <div class="hello">
+               <div class="button-table">
+                    <button class="square-button" onclick="openPage('convertor/currency.html')">
+                          <img src="image/convertor/currency.png" alt="Logo 1"><br>
+                          <p class="text">Currency</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('convertor/temp.html')">
+                        <img src="image/convertor/temperature.png" alt="Logo 2"><br>
+                        <p class="text">Temerature</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('convertor/lenght.html')">
+                         <img src="image/convertor/lenght.png" alt="Logo 3"><br>
+                         <p class="text">Lenght</p>
+                   </button>
+
+                    <button class="square-button" onclick="openPage('convertor/area.html')">
+                          <img src="image/convertor/area.png" alt="Logo 4"><br>
+                          <p class="text">Area</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('convertor/weight.html')">
+                           <img src="image/convertor/weight.png" alt="Logo 5"><br>
+                            <p class="text">Weight</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('convertor/speed.html')">
+                             <img src="image/convertor/speed.png" alt="Logo 6"><br>
+                              <p class="text">Speed</p>
+                   </button>
+
+                    <button class="square-button" onclick="openPage('convertor/pressure.html')">
+                          <img src="image/convertor/pressure.png" alt="Logo 4"><br>
+                          <p class="text">Pressure</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('convertor/power.html')">
+                           <img src="image/convertor/power.png" alt="Logo 5"><br>
+                           <p class="text">Power</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('convertor/volume.html')">
+                             <img src="image/convertor/volume.png" alt="Logo 6"><br>
+                             <p class="text">Volume</p>
+                   </button>
+                    <button class="square-button" onclick="openPage('convertor/number.html')">
+                          <img src="image/convertor/numsys.png" alt="Logo 4"><br>
+                          <p class="text">Number System</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('convertor/freq.html')">
+                           <img src="image/convertor/freq.png" alt="Logo 5"><br>
+                           <p class="text">Frequency</p>
+                   </button>
+
+                   <button class="square-button" onclick="openPage('convertor/data.html')">
+                             <img src="image/convertor/datastorage.png" alt="Logo 6"><br>
+                             <p class="text">Data Conversions</p>
+                   </button>
+
+                  </div>
+                </div>               
+            </div>
+          </article>
+
+
+
+          <article id='tabs-3'>
+            <div class="row">
+              <div class="hello">
+                <div class="button-table3">
+
+
+                   <button class="square-button3" onclick="openPage('https://yahskamrahs.github.io/personal/')">
+                      <img src="image/others/warning (1).png" alt="Logo 6"><br>
+                      
+                   </button>
+                       <br>
+                       <h3 class="text3">Under Developement</h3>
+
+                   </div>
+                </div>
+               </div> 
+            </div>
+          </article>
+
+
+
+       </section> 
+       </div> 
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ======= Team Section ======= -->
+    <section id="team">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">Follow Me</h3>
+          <p class="section-description">Follow me on github for source code of this project</p>
+        </div>
+        <div class="row">
+            
+          <div class="button-table1">
+            <button class="square-button" onclick="openPage('https://github.com/yahskamrahs')">
+                  <img src="image/contact/github.png" alt="Logo 1"><br>
+                  
+           </button>
+
+           <button class="square-button"  onclick="window.open('mailto:example@example.com');">
+                <img src="image/contact/gmail.png" alt="Logo 2"><br>
+               
+           </button>
+          
+           <button class="square-button"  onclick="window.open('https://www.linkedin.com/in/akshay-sharma-b803a6264');">
+                <img src="image/contact/linkedin.png" alt="Logo 2"><br>
+                
+           </button>
+            
+           <button class="square-button"  onclick="window.open('https://instagram.com/yahska_amrahs?igshid=MzRlODBiNWFlZA==');">
+                <img src="image/contact/instagram.png" alt="Logo 2"><br>
+               
+           </button>
+        
+           <button class="square-button" onclick="window.open('https://twitter.com/yahskaamrahs?t=8CjfeyyMGt2OyNBMMp4yLg&s=09');" >
+                <img src="image/contact/twitter.png" alt="Logo 2"><br>
+                
+           </button>
+
+</div>
+ 
+
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+
+
+
+
+
+
+   
+
+
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+
+      </div>
+    </div>
+
+    <div class="container">
+    
+      <div class="credits">
+        Developed by <a href="https://yahskamrahs.github.io/personal/">Akshay Sharma</a> With Peace <img src="white_bird.png" class="emoji-image">
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong>2023</strong>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+
+
+
+
+  
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+     function openPage(pageName) {
+             window.location.href = pageName;
+           }
+  </script>
+
+</body>
+
+</html>

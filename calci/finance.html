@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Calculator</title>
+<meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: url(../assets/img/hero-bg1.jpg) top center;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125vh;
+  }
+  .calculator {
+    background-color: #343a40;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 340px;
+    margin-top: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fdf9f9;
+    text-align: left;
+  }
+  input {
+    padding: 10px;
+    margin: 5px 0;
+    width: 93%;
+    background-color: #464d53;
+    border: none;
+    border-radius: 5px;
+    color: #fcf9f9;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+  h1, h2 {
+    color: #3498db;
+  }
+  .developer{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #888;
+  }
+
+   .emoji-image {
+    width: 13px; /* Adjust this value to your preferred width */
+    height: 13px; /* Maintain the aspect ratio */
+    vertical-align: middle;
+  }
+
+
+
+
+</style>
+</head>
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div id="logo">
+        <h1><b href="">SIMPLE</b>MATH</h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="../index.html">back to Home</a></li>
+          <li><a class="nav-link scrollto" href="https://yahskamrahs.github.io/personal/">About Me</a></li>
+         <!-- <li><a class="nav-link scrollto " href="#portfolio">Tools</a></li>
+          <li><a class="nav-link scrollto" href="#team">Contact</a></li>-->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+
+
+
+
+
+
+
+  <div class="calculator">
+    <h1>Financial Calculator</h1>
+    <form id="financialForm">
+      <label for="calculationType">Calculation Type:</label>
+      <select id="calculationType" name="calculationType">
+        <option value="futureValue">Future Value (FV)</option>
+        <option value="periodicPayment">Periodic Payment (PMT)</option>
+        <option value="interestRate">Interest Rate (I/Y)</option>
+        <option value="numCompoundingPeriods">Number of Compounding Periods (N)</option>
+        <option value="presentValue">Present Value (PV)</option>
+      </select>
+
+      <label for="principal">Principal (₹):</label>
+      <input type="number" id="principal" name="principal">
+
+      <label for="interestRate">Interest Rate (%):</label>
+      <input type="number" id="interestRate" name="interestRate">
+
+      <label for="loanTerm">Loan Term (years):</label>
+      <input type="number" id="loanTerm" name="loanTerm">
+
+      <button type="button" id="calculateButton">Calculate</button>
+    </form>
+    <h2>Results:</h2>
+    <p id="financialResult"></p>
+    <div class="developer">Designed By Akshay Sharma</div>
+    <div class="developer">With Peace <img src="white_bird.png" class="emoji-image">
+    
+
+  </div>
+
+
+
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Vendor JS Files -->
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+     function openPage(pageName) {
+             window.location.href = pageName;
+           }
+
+  </script>
+
+
+
+
+  <script>
+    document.getElementById("calculateButton").addEventListener("click", function() {
+      const calculationType = document.getElementById("calculationType").value;
+      const principal = parseFloat(document.getElementById("principal").value);
+      const interestRate = parseFloat(document.getElementById("interestRate").value) / 100;
+      const loanTerm = parseFloat(document.getElementById("loanTerm").value);
+
+      if (calculationType && principal && (interestRate || calculationType === "interestRate") && (loanTerm || calculationType === "numCompoundingPeriods")) {
+        let resultText = "";
+
+        switch (calculationType) {
+          case "futureValue":
+            const futureValue = principal * Math.pow(1 + interestRate, loanTerm);
+            resultText = `Future Value (FV): ₹${futureValue.toFixed(2)}`;
+            break;
+          case "periodicPayment":
+            const periodicPayment = (principal * interestRate) / (1 - Math.pow(1 + interestRate, -loanTerm));
+            resultText = `Periodic Payment (PMT): ₹${periodicPayment.toFixed(2)}`;
+            break;
+          case "interestRate":
+            const interestRateCalc = Math.pow((principal / loanTerm), (1 / loanTerm)) - 1;
+            resultText = `Interest Rate (I/Y): ₹${(interestRateCalc * 100).toFixed(2)}%`;
+            break;
+          case "numCompoundingPeriods":
+            const numCompoundingPeriods = Math.log(interestRate + 1) / Math.log(principal);
+            resultText = `Number of Compounding Periods (N): ${numCompoundingPeriods.toFixed(2)}`;
+            break;
+          case "presentValue":
+            const presentValue = principal / Math.pow(1 + interestRate, loanTerm);
+            resultText = `Present Value (PV): ₹${presentValue.toFixed(2)}`;
+            break;
+        }
+
+        document.getElementById("financialResult").innerHTML = resultText;
+      } else {
+        document.getElementById("financialResult").innerHTML = "Please fill in all the required fields.";
+      }
+    });
+  </script>
+</body>
+</html>

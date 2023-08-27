@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrix Calculator</title>
+<meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+
+<style>
+   body {
+    background-image: url('../assets/img/hero-bg1.jpg'); /* Change to your image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    position: relative;
+    align-items: center; 
+    height: 140vh; 
+    width: 100%; 
+    margin: 0;
+    padding: 0;
+  }
+  .container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 340px;
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  h1 {
+    text-align: center;
+    color: #3498db;
+  }
+  .matrix-input {
+    background-color: #2c2c2c;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    width: 40px;
+    text-align: center;
+  }
+  .result {
+    margin-top: 10px;
+  }
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+    height: auto;
+    width: auto;
+    margin-top: 10px;
+  }
+
+  .button {
+    background-color: #0074d9;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 5px 10px;
+      gap: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.2s;
+      outline: none;
+    }
+    button:hover {
+    background-color: #0056b3;
+  }
+
+  .matrix-result {
+    font-family: monospace;
+    white-space: pre;
+  }
+
+  .developer{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+  }
+
+   .emoji-image {
+    width: 13px; /* Adjust this value to your preferred width */
+    height: 13px; /* Maintain the aspect ratio */
+    vertical-align: middle;
+  }
+</style>
+</head>
+
+
+
+
+<body>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center header-transparent">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <div id="logo">
+      <h1><b href="">SIMPLE</b>MATH</h1>
+    </div>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto active" href="../index.html">back to Home</a></li>
+        <li><a class="nav-link scrollto" href="https://yahskamrahs.github.io/personal/">About Me</a></li>
+       <!-- <li><a class="nav-link scrollto " href="#portfolio">Tools</a></li>
+        <li><a class="nav-link scrollto" href="#team">Contact</a></li>-->
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+  </div>
+</header><!-- End Header -->
+
+
+
+
+
+
+<div class="container1">
+  <h1>Matrix Arithmetic Calculator</h1>
+  <div>
+    <label>Select Matrix Size:</label>
+    <select id="matrixSize">
+      <option value="2x1">2x1</option>
+      <option value="2x2">2x2</option>
+      <option value="3x1">3x1</option>
+      <option value="3x2">3x2</option>
+      <option value="3x3">3x3</option>
+      <option value="4x1">4x1</option>
+      <option value="4x2">4x2</option>
+      <option value="4x3">4x3</option>
+      <option value="4x4">4x4</option>
+    </select>
+  </div>
+  <div>
+    <label>Matrix A:</label><br>
+    <div id="matrixA"></div>
+  </div>
+  <div>
+    <label>Matrix B:</label><br>
+    <div id="matrixB"></div>
+  </div>
+  <div class="button-grid">
+    <button class="button" onclick="performCalculation('add')">Add</button>
+    <button class="button" onclick="performCalculation('subtract')">Subtract</button>
+    <button class="button" onclick="performCalculation('multiply')">Multiply</button>
+    <button class="button" onclick="performCalculation('divide')">Divide</button>
+  </div>
+  <div class="result">
+    <h4>Output:</h4>
+    <pre class="matrix-result" id="result"></pre>
+  </div>
+  <div class="developer">Designed By Akshay Sharma</div>
+  <div class="developer">With Peace <img src="white_bird.png" class="emoji-image">
+</div>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Vendor JS Files -->
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+     function openPage(pageName) {
+             window.location.href = pageName;
+           }
+
+  </script>
+
+
+
+
+
+
+<script>
+  function createMatrixInputs(rows, cols, containerId) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
+
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+        const input = document.createElement('input');
+        input.className = 'matrix-input';
+        input.type = 'number';
+        container.appendChild(input);
+      }
+      container.appendChild(document.createElement('br'));
+    }
+  }
+
+  function performCalculation(operation) {
+    const matrixSize = document.getElementById('matrixSize').value;
+    const rowsA = parseInt(matrixSize.charAt(0));
+    const colsA = parseInt(matrixSize.charAt(2));
+    const rowsB = parseInt(matrixSize.charAt(0));
+    const colsB = parseInt(matrixSize.charAt(2));
+
+    const matrixAInputs = document.querySelectorAll('#matrixA input');
+    const matrixBInputs = document.querySelectorAll('#matrixB input');
+
+    const matrixA = [];
+    const matrixB = [];
+
+    for (let i = 0; i < rowsA; i++) {
+      matrixA[i] = [];
+      for (let j = 0; j < colsA; j++) {
+        matrixA[i][j] = parseFloat(matrixAInputs[i * colsA + j].value);
+      }
+    }
+
+    for (let i = 0; i < rowsB; i++) {
+      matrixB[i] = [];
+      for (let j = 0; j < colsB; j++) {
+        matrixB[i][j] = parseFloat(matrixBInputs[i * colsB + j].value);
+      }
+    }
+
+    const result = document.getElementById('result');
+    let resultMatrix = [];
+
+    if (operation === 'add') {
+      // Addition logic
+      resultMatrix = matrixAddition(matrixA, matrixB);
+    } else if (operation === 'subtract') {
+      // Subtraction logic
+      resultMatrix = matrixSubtraction(matrixA, matrixB);
+    } else if (operation === 'multiply') {
+      //resultMatrix = matrixMultiplication(matrixA, matrixB);
+      result.textContent = "Sorry I am facing some issue with\nmatrix multiplication this issue\nwill rosolve soon..";
+    } else if (operation === 'divide') {
+      if (matrixSize === '2x2' || matrixSize === '3x3') {
+       // resultMatrix = matrixDivision(matrixA, matrixB);
+        result.textContent = "Wait.. Really? You tried to do Matrix\nDivision Operation,HAHAHA there is no\nsuch thing as matrix division,I will\nreplace the division option  with\nInverse of matrix soon..";
+      } else {
+        result.textContent = "Wait.. Really? You tried to do Matrix\nDivision Operation,HAHAHA there is no\nsuch thing as matrix division, I will\nreplace the division option  with\nInverse of matrix soon..";
+        return;
+      }
+    }
+    // Display resultMatrix in the result section
+    result.textContent = matrixToFormattedString(resultMatrix);
+  }
+  function matrixToFormattedString(matrix) {
+    const rows = matrix.length;
+    const cols = matrix[0].length;
+    let formattedString = '';
+
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+        formattedString += matrix[i][j].toFixed(2);
+        if (j < cols - 1) {
+          formattedString += '  ';
+        }
+      }
+      if (i < rows - 1) {
+        formattedString += '\n';
+      }
+    }
+
+    return formattedString;
+  }
+
+  function matrixAddition(matrixA, matrixB) {
+    const result = [];
+    for (let i = 0; i < matrixA.length; i++) {
+      result[i] = [];
+      for (let j = 0; j < matrixA[0].length; j++) {
+        result[i][j] = matrixA[i][j] + matrixB[i][j];
+      }
+    }
+    return result;
+  }
+  function matrixSubtraction(matrixA, matrixB) {
+    const result = [];
+    for (let i = 0; i < matrixA.length; i++) {
+      result[i] = [];
+      for (let j = 0; j < matrixA[0].length; j++) {
+        result[i][j] = matrixA[i][j] - matrixB[i][j];
+      }
+    }
+    return result;
+  }
+
+  function matrixMultiplication(matrixA, matrixB) {
+    const result = [];
+    for (let i = 0; i < matrixA.length; i++) {
+      result[i] = [];
+      for (let j = 0; j < matrixB[0].length; j++) {
+        let sum = 0;
+        for (let k = 0; k < matrixA[0].length; k++) {
+          sum += matrixA[i][k] * matrixB[k][j];
+        }
+        result[i][j] = sum;
+      }
+    }
+    return result;
+  }
+
+  function matrixDivision(matrixA, matrixB) {
+    if (matrixB.length !== matrixB[0].length) {
+      return []; // Division not possible if matrixB is not square
+    }
+
+    const determinantB = calculateDeterminant(matrixB);
+
+    if (determinantB === 0) {
+      return []; // Division not possible if determinant is 0
+    }
+
+    const inverseB = calculateInverse(matrixB, determinantB);
+    return matrixMultiplication(matrixA, inverseB);
+  }
+
+  function calculateDeterminant(matrix) {
+    if (matrix.length === 2) {
+      return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+    } else if (matrix.length === 3) {
+      return (
+        matrix[0][0] * matrix[1][1] * matrix[2][2] +
+        matrix[0][1] * matrix[1][2] * matrix[2][0] +
+        matrix[0][2] * matrix[1][0] * matrix[2][1] -
+        matrix[0][2] * matrix[1][1] * matrix[2][0] -
+        matrix[0][0] * matrix[1][2] * matrix[2][1] -
+        matrix[0][1] * matrix[1][0] * matrix[2][2]
+      );
+    }
+    return 0; // Unsupported matrix size
+  }
+
+  function calculateInverse(matrix, determinant) {
+    const inverse = [];
+
+    if (matrix.length === 2) {
+      inverse[0] = [matrix[1][1] / determinant, -matrix[0][1] / determinant];
+      inverse[1] = [-matrix[1][0] / determinant, matrix[0][0] / determinant];
+    } else if (matrix.length === 3) {
+      // Calculate inverse using the adjugate matrix
+      inverse[0] = [
+        (matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1]) / determinant,
+        (matrix[0][2] * matrix[2][1] - matrix[0][1] * matrix[2][2]) / determinant,
+        (matrix[0][1] * matrix[1][2] - matrix[0][2] * matrix[1][1]) / determinant,
+      ];
+      inverse[1] = [
+        (matrix[1][2] * matrix[2][0] - matrix[1][0] * matrix[2][2]) / determinant,
+        (matrix[0][0] * matrix[2][2] - matrix[0][2] * matrix[2][0]) / determinant,
+        (matrix[0][2] * matrix[1][0] - matrix[0][0] * matrix[1][2]) / determinant,
+      ];
+      inverse[2] = [
+        (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0]) / determinant,
+        (matrix[0][1] * matrix[2][0] - matrix[0][0] * matrix[2][1]) / determinant,
+        (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]) / determinant,
+      ];
+    }
+
+    return inverse;
+  }
+
+
+
+  document.getElementById('matrixSize').addEventListener('change', function() {
+    const matrixSize = this.value;
+    const rows = parseInt(matrixSize.charAt(0));
+    const cols = parseInt(matrixSize.charAt(2));
+    createMatrixInputs(rows, cols, 'matrixA');
+    createMatrixInputs(rows, cols, 'matrixB');
+  });
+
+  // Initialize with default matrix size
+  createMatrixInputs(2, 1, 'matrixA');
+  createMatrixInputs(2, 1, 'matrixB');
+</script>
+</body>
+</html>
